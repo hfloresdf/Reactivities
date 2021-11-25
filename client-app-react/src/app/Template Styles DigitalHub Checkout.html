@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalHub Checkout Common Styles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+    <style>
+        /*Default Font Styles*/
+        .checkout-digitalhub {
+            font-family: 'basier-circle', sans-serif;
+            color:#000000;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.1px; 
+            font-style: normal;
+            font-weight: normal;
+        }
+        
+        /*Custom Radio*/
+        .checkout-digitalhub .div-inline-list {
+        width: 50%;
+        }
+
+        .checkout-digitalhub .div-inline-list > .product-container {
+        display: flex;
+        margin: 16px;
+        }
+
+        .checkout-digitalhub .product-container {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        padding: 0px;
+        }
+
+        .checkout-digitalhub .payment-plan-title {
+        position: absolute;
+        top: 15px;
+        left: 50px;
+        font-style: normal;
+        font-weight: 600;
+        }
+
+        .checkout-digitalhub .payment-plan-description {
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        line-height: 24px;
+        text-align: right;
+        letter-spacing: 0.1px;
+        }
+
+        .checkout-digitalhub .payment-plan-price {
+        position: absolute;
+        top: 15px;
+        right: 50px;
+        font-style: normal;
+        font-weight: 600;
+        text-align: right;
+        letter-spacing: 0.1px;
+        }
+
+        .checkout-digitalhub .clickable {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        border: 1px solid #DFDFDF;
+        box-sizing: border-box;
+        border-radius: 5px;
+        transition: all ease .2s;
+        z-index: 10;
+        color: #979797;
+        text-align: right;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:checked + .clickable {
+        background: #C8E4F0;
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        color: #000000;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:checked + .clickable .payment-plan-price {
+        color: #1887FF;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:hover + .clickable {
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        }
+
+        .checkout-digitalhub input[name="myradio"] {
+        display:none;
+        }
+
+
+        /* Switch Toogle*/
+        .checkout-digitalhub .switch {
+        position: relative;
+        display: inline-block;
+        width: 38px;
+        height: 22px;
+        }
+
+        .checkout-digitalhub .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+        }
+
+        .checkout-digitalhub .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #D8D8D8;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .checkout-digitalhub .slider:before {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 19px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        }
+
+        .checkout-digitalhub input:checked + .slider {
+        background-color: #3791F3;
+        }
+
+        .checkout-digitalhub input:focus + .slider {
+        box-shadow: 0 0 1px #3791F3;
+        }
+
+        .checkout-digitalhub input:checked + .slider:before {
+        -webkit-transform: translateX(15px);
+        -ms-transform: translateX(15px);
+        transform: translateX(15px);
+        }
+
+        .checkout-digitalhub .slider.round {
+        border-radius: 16px;
+        }
+
+        .checkout-digitalhub .slider.round:before {
+        border-radius: 50%;
+        }
+
+        /*Textbox*/
+        .checkout-digitalhub .form-control {
+        background: #FFFFFF;
+        border: 1px solid #DFDFDF;
+        box-sizing: border-box;
+        border-radius: 5px;
+        }
+        .checkout-digitalhub .form-control:focus {
+            border: 1px solid #444F5A;
+        }
+
+        /*Buttons*/
+        .checkout-digitalhub .btn{
+        border-radius: 5px;
+        }
+        .checkout-digitalhub .btn.yellow{
+        background: #F8E71C;
+        font-weight: 600;
+        }
+        .checkout-digitalhub .btn.blue{
+        background: #3791F3;
+        font-weight: 600;
+        color: #FFFFFF;
+        }
+        .checkout-digitalhub .btn.blue{
+        background: #3791F3;
+        font-weight: 600;
+        color: #FFFFFF;
+        }
+        .checkout-digitalhub .btn .subtext{
+        font-size:12px;
+        }
+        .checkout-digitalhub .btn {
+        background: #FFFFFF;
+        border: 1px solid #DFDFDF;
+        box-sizing: border-box;
+        font-weight: 400;
+        }
+        
+        .dh-checkout-icon:before {
+        margin-right: 3px;
+        }
+
+        /*Checkbox*/
+        .checkout-digitalhub input[type="checkbox"]:checked {
+        filter:  grayscale(.96) invert(100%);
+        transform: scale(1.2);
+        }
+        .checkout-digitalhub input[type="checkbox"] {
+        transform: scale(1.2);
+        }
+
+        /*Payment Button*/
+        .checkout-digitalhub .radio-toolbar input[type="radio"] {
+        opacity: 0;
+        position: fixed;
+        width: 0;
+        }
+
+        .checkout-digitalhub .radio-toolbar label {
+            display: inline-block;
+            background-color: #FFFFFF;
+            padding: 10px 20px;
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .checkout-digitalhub .radio-toolbar input[type="radio"]:checked + label {
+            background-color: #C8E4F0;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        .checkout-digitalhub .radio-toolbar label:hover {
+        background-color: #FFFFFF;
+        }
+
+
+
+
+        /*Styles for example Code (for developers)*/
+        .checkout-digitalhub pre {
+            font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace; 
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0px; 
+        margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Start DigitalHub Checkout-->
+    <div class="checkout-digitalhub" style="margin: 25px">
+        <hr>
+        <h2>Payment Buttons</h2>
+        <div class="radio-toolbar">
+        <input type="radio" id="PayByCart" name="paymentType" value="PayByCart" checked>
+        <label for="PayByCart">Pay By Cart</label>
+
+        <input type="radio" id="PayPal" name="paymentType" value="PayPal">
+        <label for="PayPal">Pay Pal</label>
+    </div>
+        <pre>
+        .checkout-digitalhub .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+
+        .checkout-digitalhub .radio-toolbar label {
+            display: inline-block;
+            background-color: #FFFFFF;
+            padding: 10px 20px;
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .checkout-digitalhub .radio-toolbar input[type="radio"]:checked + label {
+            background-color: #C8E4F0;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        .checkout-digitalhub .radio-toolbar label:hover {
+            background-color: #FFFFFF;
+        }
+        </pre>
+        
+        <hr>
+        <h2>Checkbox</h2>
+        <div class="checkbox">
+        <label>
+            <input type="checkbox"> Mobile tickets
+        </label>
+        </div>
+        <div class="checkbox">
+        <label>
+            <input type="checkbox" checked> Send me tickets in the mail
+        </label>
+        </div>
+        <pre>
+        .checkout-digitalhub input[type="checkbox"]:checked {
+            filter:  grayscale(2) invert(100%);
+            transform: scale(1.2);
+        }
+        .checkout-digitalhub input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+        </pre>
+        
+        <hr>
+        <h2>Buttons</h2>
+        <div>
+        <button type="button" class="btn">
+            <i class="dh-checkout-icon glyphicon glyphicon-plus"></i> 
+            New Address
+        </button>
+        </div>
+        <br>
+        <div style="width: 10%">
+        <button type="button" class="btn btn-block yellow">Add Card</button>
+        </div>
+        <br>
+        <div style="width: 40%">
+        <button type="button" class="btn btn-block blue">
+            <i class="dh-checkout-icon glyphicon glyphicon-plus"></i> 
+            Add Card 
+            <span class="subtext">(Add up to 2 more cards)</span>
+        </button>
+        </div>
+        <br>
+        <div style="width: 10%">
+        <button type="button" class="btn yellow" disabled >
+            <i class="dh-checkout-icon glyphicon glyphicon-lock"></i> 
+            Complete Purchase 
+        </button>
+        </div>
+        <pre>
+        .checkout-digitalhub .btn{
+            border-radius: 5px;
+        }
+        .checkout-digitalhub .btn.yellow{
+            background: #F8E71C;
+            font-weight: 600;
+        }
+        .checkout-digitalhub .btn.blue{
+            background: #3791F3;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+        .checkout-digitalhub .btn.blue{
+            background: #3791F3;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+        .checkout-digitalhub .btn .subtext{
+            font-size:12px;
+        }
+
+        .dh-checkout-icon:before {
+            margin-right: 3px;
+        }
+        </pre>
+    
+        <hr>
+        <h2>TextBox</h2>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Card Number">
+        </div>
+        <pre>
+        .checkout-digitalhub .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+            .checkout-digitalhub .form-control:focus {
+            border: 1px solid #444F5A;
+            }
+        </pre>
+        
+        <hr>
+        <h2>Checkbox as Toogle Switch:</h2>
+        <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <span>Split payments</span>
+        </div>
+        <pre>
+        .checkout-digitalhub .switch {
+            position: relative;
+            display: inline-block;
+            width: 38px;
+            height: 22px;
+        }
+
+        .checkout-digitalhub .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .checkout-digitalhub .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #D8D8D8;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .checkout-digitalhub .slider:before {
+            position: absolute;
+            content: "";
+            height: 19px;
+            width: 19px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .checkout-digitalhub input:checked + .slider {
+            background-color: #3791F3;
+        }
+
+        .checkout-digitalhub input:focus + .slider {
+            box-shadow: 0 0 1px #3791F3;
+        }
+
+        .checkout-digitalhub input:checked + .slider:before {
+            -webkit-transform: translateX(15px);
+            -ms-transform: translateX(15px);
+            transform: translateX(15px);
+        }
+
+        .checkout-digitalhub .slider.round {
+            border-radius: 16px;
+        }
+
+        .checkout-digitalhub .slider.round:before {
+            border-radius: 50%;
+        }
+        </pre>
+
+        <hr>
+        <h2>Styles to custom Radio Buttons:</h2>
+        <div class="div-inline-list">
+        <div class="product-container">
+            <input id="prod1" type="radio" name="myradio">
+            <label for="prod1" class="clickable">
+            <span class="payment-plan-price">
+                $14,042.00 due today
+            </span>
+            <span class="payment-plan-title">
+                Pay total balance
+            </span>
+            <span class="payment-plan-description">
+                Pay once and you’re all set
+            </span>           
+            </label>       
+        </div>
+
+        <div class="product-container">
+            <input id="prod2" type="radio" name="myradio">
+            <label for="prod2" class="clickable">
+            <span class="payment-plan-price">
+                $4,680.67 due today
+            </span>
+            <span class="payment-plan-title">
+                1/3 Deposit + 1/3 Payment + 1/3 Final Payment
+            </span>
+            <span class="payment-plan-description">
+                3 payments until you’re fully paid off
+            </span>           
+            </label> 
+        </div>
+        <div class="product-container">
+            <input id="prod3" type="radio" name="myradio">
+            <label for="prod3" class="clickable">
+            <span class="payment-plan-price">
+                $7,021 due today
+            </span>
+            <span class="payment-plan-title">
+                1 time deposit + final payment
+            </span>
+            <span class="payment-plan-description">
+                2 payments until you’re fully paid off
+            </span>           
+            </label> 
+        </div>
+        </div>
+        <pre>
+        .checkout-digitalhub .div-inline-list {
+            width: 50%;
+        }
+
+        .checkout-digitalhub .div-inline-list > .product-container {
+            display: flex;
+            margin: 16px;
+        }
+
+        .checkout-digitalhub .product-container {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            padding: 0px;
+        }
+
+        .checkout-digitalhub .payment-plan-title {
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        .checkout-digitalhub .payment-plan-description {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            line-height: 24px;
+            text-align: right;
+            letter-spacing: 0.1px;
+        }
+
+        .checkout-digitalhub .payment-plan-price {
+            position: absolute;
+            top: 15px;
+            right: 50px;
+            font-style: normal;
+            font-weight: 600;
+            text-align: right;
+            letter-spacing: 0.1px;
+        }
+
+        .checkout-digitalhub .clickable {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            border: 1px solid #DFDFDF;
+            box-sizing: border-box;
+            border-radius: 5px;
+            transition: all ease .2s;
+            z-index: 10;
+            color: #979797;
+            text-align: right;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:checked + .clickable {
+            background: #C8E4F0;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+            color: #000000;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:checked + .clickable .payment-plan-price {
+            color: #1887FF;
+        }
+
+        .checkout-digitalhub input[name="myradio"]:hover + .clickable {
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .checkout-digitalhub input[name="myradio"] {
+            display:none;
+        }
+        </pre>
+        
+        <hr>
+        <h2>Default Font Styles</h2>
+        <div class="checkout-digitalhub">Digital Hub Checkout</div>
+        <pre>
+        .checkout-digitalhub {
+            font-family: 'basier-circle', sans-serif;
+            color:#000000;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.1px; 
+            font-style: normal;
+            font-weight: normal;
+        }
+        </pre>
+
+    <!-- End of DigitalHub Checkout-->
+    </div>
+</body>
+</html>

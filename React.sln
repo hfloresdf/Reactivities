@@ -1,4 +1,12 @@
-﻿
+﻿modified:   PrimeSport.TicketExchange.Model/HospitalityWatermark/IHospitalityWatermarkRepository.cs
+        modified:   PrimeSport.TicketExchange.Repository.NHibernate/Repositories/HospitalityWatermarkRepository.cs
+        modified:   PrimeSport.TicketExchange.Services/Implementations/EventService.cs
+        modified:   PrimeSport.TicketExchange.Services/Implementations/HospitalityWatermarkService.cs
+        modified:   PrimeSport.TicketExchange.Services/Implementations/Interfaces/IEventService.cs
+        modified:   PrimeSport.TicketExchange.Services/Implementations/Interfaces/IHospitalityWatermarkService.cs
+        modified:   PrimeSport.TicketExchange.Services/Mapping/EventMapper.cs
+        modified:   PrimeSport.TicketExchange.Web/Controllers/EventController.cs
+        modified:   PrimeSport.TicketExchange.Web/Web.config
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
